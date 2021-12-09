@@ -1,0 +1,26 @@
+@import "src/assets/styles/GlobalStyle";
+
+.AppHeader_Comp {
+  height: 70px;
+  width: $fullWidth;
+  background: rgb(10, 0, 65);
+  padding: 0 5%;
+
+  .brand__name {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    a {
+      font-size: $heading;
+    }
+  }
+
+  a {
+    //font-weight: 600;
+    color: $colorWhite !important;
+
+    &:hover {
+      color: $linkColorHover !important;
+    }
+  }
+};
