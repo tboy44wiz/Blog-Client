@@ -1,0 +1,65 @@
+@import "src/assets/styles/GlobalStyle";
+
+
+.Modal_Comp {
+
+    .modal-captions__wrapper {
+        line-height: 0.6;
+    };
+
+    form {
+        margin-top: 0;
+        
+        .input__box {
+            height: auto;
+            width: 100%;
+            background: $tertiaryColor;
+            border: none;
+            line-height: 40px;
+            outline: none;
+            padding: 5px 15px;
+
+            &:nth-child(2) {
+                margin-top: 10px;
+            };
+    
+            &:focus {
+                outline: none;
+            };
+        }; 
+    };
+    
+    .close-modal__button {
+        margin-left: 15px;
+        background: #002e2e9d;
+        border: 1px solid #0077779d;
+        border-radius: 3px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        padding: 6px 15px;
+        transition: all 0.2s ease;
+
+        &:hover {
+        background: transparent;
+        border: 1px solid #0077779d;
+        color: $primaryColor;
+        };
+    };
+
+    .send-like__button {
+        margin-left: 15px;
+        background: $primaryColor;
+        border: 1px solid $primaryColor;
+        border-radius: 3px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        padding: 6px 15px;
+        transition: all 0.2s ease;
+
+        &:hover {
+        background: transparent;
+        border: 1px solid $linkColorHover;
+        color: $primaryColor;
+        };
+    };
+};

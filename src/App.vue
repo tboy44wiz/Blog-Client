@@ -20,7 +20,6 @@
 
 
 <script lang="ts">
-// import {Icon} from "@iconify/vue";
   import { defineComponent } from 'vue';
   import AppHeader_Comp from "@/components/layouts/AppHeader_Comp/AppHeader_Comp.vue";
   import AppFooter_Comp from "@/components/layouts/AppFooter_Comp/AppFooter_Comp.vue";
@@ -30,7 +29,6 @@
     name: 'App' as string,
 
     components: {
-      // Icon
       AppHeader_Comp,
       AppFooter_Comp,
     },
@@ -44,5 +42,5 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "App";
+  @import "_App";
 </style>

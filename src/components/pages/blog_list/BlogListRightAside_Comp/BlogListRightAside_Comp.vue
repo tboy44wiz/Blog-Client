@@ -12,7 +12,7 @@
                      onblur="this.placeholder = 'Search Keyword'"
               >
               <button class="search__button" type="submit">
-                <Icon icon="flat-color-icons:search" width="26" />
+                <img :src="search_icon" width="26" />
               </button>
             </div>
           </div>
@@ -21,7 +21,7 @@
 
       <!--  Category Section  -->
       <section class="category__wrapper">
-        <h4 class="section__title">Categories</h4>
+        <h5 class="section__title">Categories</h5>
         <ul class="category__list">
           <li class="category__list-item">
             <router-link to="#" class="link__wrapper">
@@ -58,44 +58,31 @@
 
       <!--  Recent Post Section  -->
       <aside class="recent-post__wrapper">
-        <h4 class="section__title">Recent Posts</h4>
+        <h5 class="section__title">Recent Posts</h5>
         <ul class="post-list_wrapper">
-          <li class="post-list-item__wrapper">
-            <img :src="postImage_1" class="img-fluid" alt="Post_Image" />
+          <li 
+            v-for="post in recentBlogsGetter" 
+            :key="post.id"
+            class="post-list-item__wrapper"
+            >
+
+            <img :src="post.image" class="img-fluid" alt="Post_Image" />
+            
             <div class="post-detail__wrapper">
               <router-link to="#">
-                <h5>From life was you fish...</h5>
+                <h5>{{ post.title }}</h5>
               </router-link>
-              <p>2 Hours ago</p>
-            </div>
-          </li>
-          <li class="post-list-item__wrapper">
-            <img :src="postImage_2" class="img-fluid" alt="Post_Image" />
-            <div class="post-detail__wrapper">
-              <router-link to="#">
-                <h5>The Amazing Hubble Hubble</h5>
-              </router-link>
-              <p>May 7, 2021</p>
-            </div>
-          </li>
-          <li class="post-list-item__wrapper">
-            <img :src="postImage_3" class="img-fluid" alt="Post_Image" />
-            <div class="post-detail__wrapper">
-              <router-link to="#">
-                <h5>Astronomy Or Astrology</h5>
-              </router-link>
-              <p>Sep 26, 2020</p>
+              <p>{{ post.date }}</p>
             </div>
           </li>
         </ul>
       </aside>
 
-      <!--  Post tags Section  -->
-      <aside class="post-tag__wrapper">
-        <h4 class="section__title">Tags</h4>
+      <!--  Blog tags Section  -->
+      <aside class="blog-tag__wrapper">
+        <h5 class="section__title">Look out to your favorites</h5>
         <ul class="tag-list__wrapper">
-          <li v-for="blogTag in blogTags"
-              class="tag-list__item">
+          <li v-for="blogTag in blogTagsGetter" :key="blogTag" class="tag-list__item">
             <router-link to="#" :key="blogTag">{{ blogTag }}</router-link>
           </li>
         </ul>
@@ -105,12 +92,12 @@
 
 <script lang="ts">
   import {defineComponent} from "vue";
+  import { mapGetters } from "vuex";
   import {Icon} from "@iconify/vue";
+  
 
   //  Import assets.
-  import postImage_1 from '@/assets/images/blog/post_1.png';
-  import postImage_2 from '@/assets/images/blog/post_2.png';
-  import postImage_3 from '@/assets/images/blog/post_3.png';
+  import search_icon from '@/assets/images/icons/search_icon.svg';
 
   export default defineComponent ({
     name: 'BlogListRightAside_Comp',
@@ -121,13 +108,13 @@
 
     data() {
       return {
-        postImage_1,
-        postImage_2,
-        postImage_3,
-
-        blogTags: ["HTML", "CSS", "JavaScript", "NodeJS", "ReactJS", "VueJS", "Svelte", "Dart", "Flutter", "Java", "Kotlin", "Swift"],
+        search_icon,
       };
     },
+
+    computed: {
+      ...mapGetters(["recentBlogsGetter", "blogTagsGetter"]),
+    }
   });
 </script>
 

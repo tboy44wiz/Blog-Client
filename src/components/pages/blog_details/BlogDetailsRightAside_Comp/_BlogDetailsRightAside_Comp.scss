@@ -1,0 +1,86 @@
+@import "src/assets/styles/GlobalStyle";
+
+
+.BlogDetailsRightAside_Comp {
+    height: min-content;
+    width: $fullWidth;
+
+    .suggested-post__wrapper {
+        margin-bottom: 30px;
+        background: $tertiaryColor;
+        border-radius: 5px;
+        padding: 20px;
+
+        .section__title {
+            font-size: 1.6rem;
+            border-bottom: 1px solid $secondaryColor;
+            padding-bottom: 10px;
+        };
+
+
+        .post-list_wrapper {
+            margin-top: 35px;
+            font-weight: 300;
+            list-style-type: none;
+            padding: 0;
+    
+            .post-list-item__wrapper {
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+        
+                img {
+                    height: 70px;
+                    width: 100px;
+                    margin-right: 15px;
+                };
+                .post-detail__wrapper {
+                    height: auto;
+                    width: calc(100% - 100px);
+        
+                    a {
+                        h5 {
+                            margin: 0;
+                            font-size: 1rem;
+                        };
+                    };
+                    p {
+                        margin: 0;
+                        font-size: 1rem;
+                    };
+                };
+            };
+        };
+    };
+
+    .blog-tag__wrapper {
+        margin-bottom: 30px;
+        background: $tertiaryColor;
+        border-radius: 5px;
+        padding: 20px;
+
+        .section__title {
+            font-size: 1.6rem;
+            border-bottom: 1px solid $secondaryColor;
+            padding-bottom: 10px;
+        };
+
+        .tag-list__wrapper {
+            margin-top: 35px;
+            list-style-type: none;
+            padding: 0;
+      
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+      
+            .tag-list__item {
+                background: $secondaryColor;
+                border-radius: 3px;
+                box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 2px;
+                font-size: 0.9rem;
+                padding: 5px 10px 2px 10px;
+            };
+        };
+    };
+};

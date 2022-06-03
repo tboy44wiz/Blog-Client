@@ -1,5 +1,5 @@
 <template>
-  <div class="Home">
+  <div class="BlogList">
 
   <!--  Blog List Section  -->
     <section class="blog-section__wrapper">
@@ -7,12 +7,12 @@
         <div class="row">
           <!--  Blog Left Aside  -->
           <section class="col-lg-8 mb-5 mb-lg-0">
-            <BlogListLeftAside_Comp />
+            <BlogListLeftAsideComp />
           </section>
 
           <!--  Blog Right Aside  -->
           <aside class="col-lg-4">
-            <BlogListRightAside_Comp />
+            <BlogListRightAsideComp />
           </aside>
         </div>
       </div>
@@ -23,15 +23,27 @@
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import BlogListLeftAside_Comp from "@/components/pages/home/BlogListLeftAside_Comp/BlogListLeftAside_Comp.vue";
-  import BlogListRightAside_Comp from "@/components/pages/home/BlogListRightAside_Comp/BlogListRightAside_Comp.vue";
+    import { mapGetters, mapActions } from "vuex";
+  
+  import BlogListLeftAsideComp from "@/components/pages/blog_list/BlogListLeftAside_Comp/BlogListLeftAside_Comp.vue";
+  import BlogListRightAsideComp from "@/components/pages/blog_list/BlogListRightAside_Comp/BlogListRightAside_Comp.vue";
 
   export default defineComponent({
-    name: 'Home',
+    name: 'BlogList',
 
     components: {
-      BlogListLeftAside_Comp,
-      BlogListRightAside_Comp,
+      BlogListLeftAsideComp,
+      BlogListRightAsideComp,
+    },
+
+
+    methods: {
+      ...mapActions(["getAllBlogs"]),
+    },
+
+
+    beforeMount() {
+      this.getAllBlogs();
     },
   });
 </script>
