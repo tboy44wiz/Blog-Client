@@ -1,23 +1,18 @@
 <template>
   <div class="BlogList">
+    <div class="container">
+      <div class="row">
+        <!--  Blog Left Aside  -->
+        <section class="col-lg-8 mb-5 mb-lg-0">
+          <BlogListLeftAsideComp />
+        </section>
 
-  <!--  Blog List Section  -->
-    <section class="blog-section__wrapper">
-      <div class="container">
-        <div class="row">
-          <!--  Blog Left Aside  -->
-          <section class="col-lg-8 mb-5 mb-lg-0">
-            <BlogListLeftAsideComp />
-          </section>
-
-          <!--  Blog Right Aside  -->
-          <aside class="col-lg-4">
-            <BlogListRightAsideComp />
-          </aside>
-        </div>
+        <!--  Blog Right Aside  -->
+        <aside class="col-lg-4">
+          <BlogListRightAsideComp />
+        </aside>
       </div>
-    </section>
-
+    </div>
   </div>
 </template>
 
@@ -51,11 +46,16 @@
 <style lang="scss" scoped>
   @import "src/assets/styles/GlobalStyle";
 
-  .blog-section__wrapper {
+  .BlogList {
     height: auto;
     width: $fullWidth;
-    margin-top: 70px;
-    padding: 100px 0 60px 0;
+    padding: 150px 0 60px 0;
+  };
+
+  @media screen and (max-width: 680px) {
+      .BlogDetails {
+          margin-top: 20px;
+      };
   };
 </style>
 

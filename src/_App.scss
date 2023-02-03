@@ -19,7 +19,7 @@
     grid-column: col-start / col-end;
     grid-row: appHeader-start / appHeader-end;
 
-    height: auto;
+    height: 70px;
     width: $fullWidth;
     position: fixed;
     z-index: 1000;
