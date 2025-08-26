@@ -1,11 +1,9 @@
-import { createStore, storeKey } from 'vuex';
-import moment from "moment";
+import { createStore } from 'vuex';
 
 import API_Service from '../services/api_service';
 import API_Routes from '../services/api_routes'
 
 //  Images
-import search_icon from '@/assets/images/icons/search_icon.svg';
 import postImage_1 from '@/assets/images/blog/post_1.png';
 import postImage_2 from '@/assets/images/blog/post_2.png';
 import postImage_3 from '@/assets/images/blog/post_3.png';
@@ -78,9 +76,8 @@ const appStore =  createStore({
   },
 
 
-
   /**
-   * MIGRATIONS
+   * MUTATIONS / SETTERS
   */
   mutations: {
     SET_BLOGS: (state, payLoad) => state.blogs = payLoad,

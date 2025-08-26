@@ -109,5 +109,5 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "AppFooter_Comp";
+  @import "./_AppFooter_Comp";
 </style>

@@ -24,18 +24,16 @@
   import BlogListRightAsideComp from "@/components/pages/blog_list/BlogListRightAside_Comp/BlogListRightAside_Comp.vue";
 
   export default defineComponent({
-    name: 'BlogList',
+    name: 'BlogList' as string,
 
     components: {
       BlogListLeftAsideComp,
       BlogListRightAsideComp,
     },
 
-
     methods: {
       ...mapActions(["getAllBlogs"]),
     },
-
 
     beforeMount() {
       this.getAllBlogs();

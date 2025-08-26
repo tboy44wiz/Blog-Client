@@ -5,9 +5,9 @@
         :key="blog.id"
         class="blog-item__wrapper mCard"
         >
-        <div class="blog-item__image">
+        <!--<div class="blog-item__image">
           <img :src="blogImage" class="card__image img-fluid" alt="Blog_One">
-        </div>
+        </div>-->
 
         <div class="blog-details__wrapper">
           <div class="blog-item__date">
@@ -23,17 +23,17 @@
 
           <ul class="blog-info__items">
             <li class="blog-info__item">
-                <img :src="user_icon" width="23" class="blog-info__icons" />
+                <img :src="user_icon" width="23" class="blog-info__icons" alt="User Icon" />
                 <p>{{ blog.author.name }}</p>
               </li>
 
             <li class="blog-info__item">
-                <img :src="like_icon" width="23" class="blog-info__icons" />
+                <img :src="like_icon" width="23" class="blog-info__icons" alt="Like Icon" />
                 <p>{{ blog.likesCount }}</p>
             </li>
 
             <li class="blog-info__item">
-              <img :src="chat_icon" width="22" class="blog-info__icons" />
+              <img :src="chat_icon" width="22" class="blog-info__icons" alt="Chat Icon" />
               <p>{{ blog.commentsCount }}</p>
             </li>
           </ul>

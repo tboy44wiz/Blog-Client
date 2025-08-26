@@ -110,7 +110,7 @@
 
 <script lang="ts">
     import { defineComponent } from "vue";
-    import { mapGetters, mapActions } from "vuex";
+    import { mapGetters } from "vuex";
     import moment from "moment";
 
     import user_icon from '@/assets/images/icons/user2_icon.svg';
